@@ -1,0 +1,23 @@
+name: is2-cookbook-dev
+channels:
+  - conda-forge
+dependencies:
+  - jupyter-book
+  - jupyterlab
+  - jupyter_server
+  - python>=3.9
+  - matplotlib
+  - xarray
+  - pandas
+  - hvplot
+  - panel
+  - bokeh
+  - jupyter_bokeh
+  - planetary-computer
+  - pystac-client
+  - geoviews
+  - dask
+  - distributed
+  - odc-stac
+  - pydantic
+  - sphinx-pythia-theme
