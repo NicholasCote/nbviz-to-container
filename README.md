@@ -8,7 +8,7 @@ In order to work through this example on your local machine make sure you have i
 
 * [Python](https://wiki.python.org/moin/BeginnersGuide/Download)
 * [pip](https://pip.pypa.io/en/stable/installation/)
-* [nbconvert](https://nbconvert.readthedocs.io/en/latest/install.html) included in [Jupyter Notebook](https://docs.jupyter.org/en/latest/install/notebook-classic.html) or [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html)
+* [Jupyter Notebook](https://docs.jupyter.org/en/latest/install/notebook-classic.html) or [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html)
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [Mamba](https://github.com/conda-forge/miniforge#install)
 * [Podman](https://podman.io/docs/installation) or [Docker](https://docs.docker.com/engine/install/)
