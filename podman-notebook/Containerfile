@@ -1,5 +1,5 @@
 # The instructions for this image were put together with heavy influence from the Jupyter Docker stack and Pangeo base images. 
-# Containerfile for base of all CISL Cloud images
+# Containerfile for base of the Podman notebook image
 FROM quay.io/podman/stable:latest
 
 # Fix: https://github.com/hadolint/hadolint/wiki/DL4006
