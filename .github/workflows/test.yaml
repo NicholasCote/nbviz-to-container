@@ -14,7 +14,7 @@ on:
 jobs:
   build-image:
     # Use the latest ubuntu image to run the jobs
-    runs-on: arc-runner-set
+    runs-on: nbviz-runner-set
     steps:
       # Step 1 is to checkout the github repo used to build the Dockerfile
       - name: Check out the repo
