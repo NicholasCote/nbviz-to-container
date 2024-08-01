@@ -1,6 +1,13 @@
 # nbviz-to-container
 A containerization example that takes a interactive visualization in a Jupyter notebook and turns it in to a containerized web server
 
+## Workshops
+Hybrid workshops were held to go over the content contained in this repository. 
+
+The first workshop was held on June 20th, 2024. To watch a recording of that workshop, see [https://youtu.be/Bhj2KdZcK70](Tutorial: From Jupyter Notebook to Web Server: Containerizing Interactive Visualizations). The content covered during that workshop is captured in the walkthrough.ipynb file in the June-20-2024 directory in this repository. 
+
+A second workshop is going to be held on August 8th, 2024. For additional details on that workshop, see [https://www.cisl.ucar.edu/events/jupyter-notebook-web-server-automating-container-deployments-github-actions](From Jupyter Notebook to Web Server: Automating Container Deployments with GitHub Actions).The content that will be covered during that workshop is captured in the walkthrough.ipynb file in the August-08-2024 directory in this repository. 
+
 ## Prerequisites
 **Note:** If Docker is already installed there is a container image available that contains everything else
 
@@ -14,7 +21,11 @@ In order to work through this example on your local machine make sure you have i
 * [Podman](https://podman.io/docs/installation) or [Docker](https://docs.docker.com/engine/install/)
 
 ## Notebook Example
-Please use the walkthrough.ipynb file for an interactive example that takes an existing notebook and creates a web server running in a container to display an interactive visualization. 
+### Creating an interactive visualization in a container
+For an interactive example that takes an existing notebook and creates a web server running in a container to display an interactive visualization, see the walkthrough.ipynb file located in the June-20-2024 directory. 
+
+### Automating container builds and deployments
+For an interactive example that takes a container image file and automates building an image from it while updating an actual deployment configuration to use the new image, see the walkthrough.ipynb file located in the August-08-2024 directory. 
 
 ### How to get started
 
