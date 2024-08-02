@@ -27,7 +27,7 @@ jobs:
           # Provide the current directory as build context 
           context: August-08-2024/.
           # Specify where the Dockerfile is located in relation to the repo base path
-          file: Containerfile
+          file: August-08-2024/Containerfile
           # Enable the push to docker hub
           push: false
           # Provide the tags to apply to the image, this example uses the latest image tag 
