@@ -1,0 +1,35 @@
+# Name the Action
+name: Automation to build a container image
+# Define when the Action is run. This example is run when there is a push to the flask-app/ directory on the app branch.
+on:
+  push:
+    paths:
+      - August-08-2024/**
+    branches:
+      - main
+# Define the jobs to run. A job can have multiple steps and an Action can contain multiple jobs. 
+jobs:
+  build-image:
+    # Use the latest ubuntu image to run the jobs
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1 is to checkout the github repo used to build the Dockerfile
+      - name: Check out the repo
+        uses: actions/checkout@v4
+      # Get the date and send to GITHUB_OUTPUT to apply as image tag
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d.%H')" >> $GITHUB_OUTPUT
+      # Build the docker image
+      - name: Build Docker image
+        uses: docker/build-push-action@v4
+        with:
+          # Provide the current directory as build context 
+          context: August-08-2024/.
+          # Specify where the Dockerfile is located in relation to the repo base path
+          file: Containerfile
+          # Enable the push to docker hub
+          push: false
+          # Provide the tags to apply to the image, this example uses the latest image tag 
+          tags: |
+            ncote/workshop-webapp:${{ steps.date.outputs.date }}
