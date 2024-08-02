@@ -1,4 +1,5 @@
 # Use the slim Python image as the base
+# Nicks image from the workshop
 # Switched from Mamba in previous workshop to Python to reduce final image size
 FROM python:slim
 
