@@ -1,8 +1,6 @@
-# Use an official Mamba image as the base
-FROM docker.io/mambaorg/micromamba:latest
-
-# Switch to the root user to install packages and move things around
-USER root
+# Use the slim Python image as the base
+# Switched from Mamba in previous workshop to Python to reduce final image size
+FROM python:slim
 
 # Update package lists and install git
 RUN apt-get update && apt-get install -y git-all
@@ -13,9 +11,8 @@ WORKDIR /home/mambauser/app
 # Clone the git repository in to the current working directory
 RUN git clone https://github.com/NicholasCote/ERA5_interactive-cookbook-ncote.git
 
-# Install packages specified in the repos environment.yml
-# Activate this environment by providing ENV_NAME as an environment variable at runtime 
-RUN micromamba env create -f ERA5_interactive-cookbook-ncote/environment.yml
+# Install packages specified in the repos requirements.txt
+RUN pip install -r ERA5_interactive-cookbook-ncote/notebooks/requirements.txt
 
 # Move the notebook we are interested in to the current work directory
 RUN mv ERA5_interactive-cookbook-ncote/notebooks/04_dashboard.ipynb .
@@ -26,10 +23,7 @@ RUN rm -r ERA5_interactive-cookbook-ncote/
 # Make port bokeh application port to the world outside this container
 EXPOSE 5006
 
-# Switch to mambauser so we are no longer on root
-USER mambauser
-
 # Run the command required to launch the notebook as a panel webserver
 # The wildcard (*) used for allow-websocket-origin allows this to run on any address
 # When using in production this should be scoped down to a URL or IP that will be used instead
-CMD ["panel", "serve", "04_dashboard.ipynb", "--allow-websocket-origin=*", "--autoreload"]
+CMD ["panel", "serve", "04_dashboard.ipynb", "--allow-websocket-origin=*"]
