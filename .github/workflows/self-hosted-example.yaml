@@ -1,0 +1,37 @@
+# This workflow builds container images and pushes them to the NSF NCAR Harbor Container Repository
+# Set the workflow name
+name: GitHub Runner Build, Push, & Update
+
+# Define the trigger that starts the action
+# For this workflow the trigger is on a push that changes anything in the main branch
+on:
+  push:
+    paths:
+      - August-08-2024/**
+    branches:
+      - main
+
+# Define the actions that are going to take place as part of this workflow    
+jobs:
+  # Name the job(s)
+  build-push-gh-runner-cicd:
+    # Define where the job should run in this case it will be run on the self-hosted runner image
+    runs-on: self-hosted
+    # Set the steps to take in order
+    steps:
+      # Step 1 is to checkout the github repo used to build the container image
+      - name: Check out the repo
+        uses: actions/checkout@v4
+      # Get the date to apply to image tag
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d.%H.%M')" >> $GITHUB_OUTPUT
+      # Use podman to build the image and tag it with the current date
+      - name: Build and push image
+        run: podman build -t docker.io/ncging/workshop-webapp:${{ steps.date.outputs.date }} .
+      # Login to Harbor with a robot account for the ncote project in Harbor
+      - name: Login to Docker Hub
+        run: podman login docker.io -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN  }}
+      # Push the image to Harbor
+      - name: Push image to Harbor
+        run: podman push docker.io/ncging/workshop-webapp:${{ steps.date.outputs.date }}
