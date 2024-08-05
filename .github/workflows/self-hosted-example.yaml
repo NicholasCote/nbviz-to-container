@@ -28,7 +28,7 @@ jobs:
         run: echo "date=$(date +'%Y-%m-%d.%H.%M')" >> $GITHUB_OUTPUT
       # Use podman to build the image and tag it with the current date
       - name: Build and push image
-        run: podman build -t docker.io/ncging/workshop-webapp:${{ steps.date.outputs.date }} .
+        run: podman build -f August-08-2024/Containerfile -t docker.io/ncging/workshop-webapp:${{ steps.date.outputs.date }} August-08-2024/.
       # Login to Harbor with a robot account for the ncote project in Harbor
       - name: Login to Docker Hub
         run: podman login docker.io -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN  }}
