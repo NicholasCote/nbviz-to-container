@@ -1,12 +1,12 @@
 webapp:
-  name: workshop-webapp
-  group: workshop-webapp
-  path: /
+  name: #APP_NAME
+  group: #APP_NAME
+  path: #URL_PATH
   tls:
-    fqdn: workshop-webapp.k8s.ucar.edu
-    secretName: incommon-account-key-workshop-webapp
+    fqdn: #FQDN
+    secretName: incommon-account-key-#APP_NAME
   container: 
-    port: 5006
-    memory: 4G
+    port: #CONTAINER_PORT
+    memory: 2G
     cpu: 1
-    image: docker.io/ncging/workshop-webapp:2024-08-06.15.51
+    image: #IMAGE_NAME
