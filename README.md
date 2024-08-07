@@ -4,9 +4,9 @@ A containerization example that takes a interactive visualization in a Jupyter n
 ## Workshops
 Hybrid workshops were held to go over the content contained in this repository. 
 
-The first workshop was held on June 20th, 2024. To watch a recording of that workshop, see [https://youtu.be/Bhj2KdZcK70](Tutorial: From Jupyter Notebook to Web Server: Containerizing Interactive Visualizations). The content covered during that workshop is captured in the walkthrough.ipynb file in the June-20-2024 directory in this repository. 
+The first workshop was held on June 20th, 2024. To watch a recording of that workshop, see [Tutorial: From Jupyter Notebook to Web Server: Containerizing Interactive Visualizations](https://youtu.be/Bhj2KdZcK70). The content covered during that workshop is captured in the walkthrough.ipynb file in the June-20-2024 directory in this repository. 
 
-A second workshop is going to be held on August 8th, 2024. For additional details on that workshop, see [https://www.cisl.ucar.edu/events/jupyter-notebook-web-server-automating-container-deployments-github-actions](From Jupyter Notebook to Web Server: Automating Container Deployments with GitHub Actions).The content that will be covered during that workshop is captured in the walkthrough.ipynb file in the August-08-2024 directory in this repository. 
+A second workshop is going to be held on August 8th, 2024. For additional details on that workshop, see [From Jupyter Notebook to Web Server: Automating Container Deployments with GitHub Actions](https://www.cisl.ucar.edu/events/jupyter-notebook-web-server-automating-container-deployments-github-actions).The content that will be covered during that workshop is captured in the walkthrough.ipynb file in the August-08-2024 directory in this repository. 
 
 ## Prerequisites
 **Note:** If Docker is already installed there is a container image available that contains everything else
